@@ -1,0 +1,12 @@
+[
+    { "term": "Pawn", "definition": "Peão" },
+    { "term": "Rook", "definition": "Torre" },
+    { "term": "Bishop", "definition": "Bispo" },
+    { "term": "Knight", "definition": "Cavalo" },
+    { "term": "King", "definition": "Rei" },
+    { "term": "Queen", "definition": "Rainha" },
+    { "term": "Piece", "definition": "Peça" },
+    { "term": "Board", "definition": "Tabuleiro" },
+    { "term": "Chess", "definition": "Xadrez" }
+  ]
+  

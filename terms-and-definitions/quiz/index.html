@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Quiz</title>
+    <link rel="stylesheet" href="../../commons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        
+        <!-- Seção para escolher o arquivo de dados -->
+        <div class="file-selection">
+            <label for="file-dropdown">Escolha um arquivo de dados:</label>
+            <select id="file-dropdown">
+                <option value="">Selecione um arquivo...</option>
+                <!-- As opções serão carregadas dinamicamente -->
+            </select>
+        </div>
+        
+        <div id="quiz">
+            <div id="question"></div>
+            <div id="options"></div>
+            <button id="nextBtn">Próxima</button>
+        </div>
+        
+        <div id="feedback"></div>
+        <div id="score">Pontuação: 0</div>
+        <div id="timer">Tempo: 00:00</div>
+
+
+        
+        <a href="../../index.html">
+            <button id="menu-btn" class="menu-btn">Menu</button>
+        </a>
+        
+        <button id="restart-btn" class="restart-btn">Reiniciar Jogo</button>
+    </div>
+
+    <script src="../commons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

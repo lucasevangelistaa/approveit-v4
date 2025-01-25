@@ -1,0 +1,31 @@
+/* Botão reiniciar */
+.restart-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #FF4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.restart-btn:hover {
+    background-color: #F50057;
+}
+
+/* Botão reiniciar */
+.menu-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ff4040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.menu-btn:hover {
+    background-color: #f50025;
+}

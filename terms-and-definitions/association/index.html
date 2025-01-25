@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Associação</title>
+  <link rel="stylesheet" href="../../commons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="title">Jogo de Associação: Termos e Definições</h1>
+
+    <!-- Seção para escolher o arquivo de dados -->
+    <div class="file-selection">
+      <label for="file-dropdown">Escolha um arquivo de dados:</label>
+      <select id="file-dropdown">
+          <option value="">Selecione um arquivo...</option>
+          <!-- As opções serão carregadas dinamicamente -->
+      </select>
+  </div>
+
+    <!-- Cronômetro -->
+    <div id="timer" class="timer">00:00</div>
+
+    <div class="game-section">
+      <div class="term-container">
+        <h2>Termos</h2>
+        <div id="terms" class="draggable-container"></div>
+      </div>
+
+      <div class="definition-container">
+        <h2>Definições</h2>
+        <div id="definitions" class="droppable-container"></div>
+      </div>
+    </div>
+
+    <!-- Feedback do jogo -->
+    <div id="feedback" class="feedback"></div>
+
+    <a href="../../index.html">
+      <button id="menu-btn" class="menu-btn">Menu</button>
+    </a>
+
+    <button id="restart-btn" class="restart-btn">Reiniciar Jogo</button>
+
+    
+  </div>
+  <script src="../commons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

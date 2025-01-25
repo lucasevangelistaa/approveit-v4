@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../commons.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Jogo da Memória</h1>
+        
+        <!-- Seção para escolher o arquivo de dados -->
+        <div class="file-selection">
+            <label for="file-dropdown">Escolha um assunto:</label>
+            <select id="file-dropdown">
+                <option value="">Selecione um assunto...</option>
+                <!-- As opções serão carregadas dinamicamente -->
+            </select>
+        </div>
+        
+        <!-- Cronômetro -->
+        <div id="timer" class="timer">00:00</div>
+        
+        <!-- Tabuleiro do jogo -->
+        <div id="game-board" class="game-board"></div>
+        
+        <!-- Feedback do jogo -->
+        <div id="feedback" class="feedback"></div>
+
+        <a href="../../index.html">
+            <button id="menu-btn" class="menu-btn">Menu</button>
+        </a>
+
+        <button id="restart-btn" class="restart-btn">Reiniciar Jogo</button>
+    </div>
+    <script src="../commons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

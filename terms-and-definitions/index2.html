@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term and Definition Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Match the Term with the Definition</h1>
+  <p id="timer">Tempo: 0 segundos</p>
+
+  <!-- Dropdown para selecionar arquivo -->
+  <label for="dataSelector">Choose a dataset:</label>
+  <select id="dataSelector">
+    <option value="data/chess.json">Chess</option>
+    <option value="data/ing-family.json">-ing family</option>
+    <option value="data/ing-family-short.json">-ing family short</option>
+  </select>
+
+  <button id="loadData">Load</button>
+
+  <div id="definitions"></div>
+  <div id="terms"></div>
+
+  <script src="script.js"></script>
+  <script src="score.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Associação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>Jogo de Associação: Termos e Definições</h1>
+      <p id="timer">Tempo: 0 segundos</p>
+    </header>
+
+    <section class="game-section">
+      <div class="term-container">
+        <h2>Termos</h2>
+        <div id="terms" class="draggable-container"></div>
+      </div>
+
+      <div class="definition-container">
+        <h2>Definições</h2>
+        <div id="definitions" class="droppable-container"></div>
+      </div>
+    </section>
+
+    <footer>
+      <select id="file-select">
+        <option value="">Escolha o arquivo de dados</option>
+        <label for="dataSelector">Choose a dataset:</label>
+        <select id="dataSelector">
+            <option value="data/chess.json">Chess</option>
+            <option value="data/ing-family.json">-ing family</option>
+            <option value="data/ing-family-short.json">-ing family short</option>
+        </select>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

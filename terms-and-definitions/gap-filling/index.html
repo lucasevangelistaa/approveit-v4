@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preenchimento de Lacunas</title>
+    <link rel="stylesheet" href="../../commons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="game-container">
+        <h1>Jogo de Preenchimento de Lacunas</h1>
+
+        <!-- Seção para escolher o arquivo de dados -->
+        <div class="file-selection">
+            <label for="file-dropdown">Escolha um arquivo de dados:</label>
+            <select id="file-dropdown">
+                <option value="">Selecione um arquivo...</option>
+                <!-- As opções serão carregadas dinamicamente -->
+            </select>
+        </div>
+
+        <p class="instruction">Preencha as lacunas abaixo com os termos ou definições corretos:</p>
+        <!-- Container onde os itens dinâmicos serão adicionados -->
+        <div id="game-container" class="sentence">
+            <!-- As lacunas e elementos serão carregados dinamicamente -->
+        </div>
+
+        <!-- Botão para verificar as respostas -->
+        <button id="checkAnswers">Verificar Respostas</button>
+        <p id="result"></p>
+
+        <!-- Cronômetro -->
+        <div id="timer" class="timer">00:00</div>
+
+        <!-- Botão de voltar ao menu -->
+        <a href="../../index.html">
+            <button id="menu-btn" class="menu-btn">Menu</button>
+        </a>
+
+        <!-- Botão de reiniciar -->
+        <button id="restart-btn" class="restart-btn">Reiniciar Jogo</button>
+    </main>
+
+    <script src="../commons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
