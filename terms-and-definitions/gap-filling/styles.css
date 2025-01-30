@@ -69,3 +69,14 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
+/* Estilo do cronômetro */
+.timer {
+    font-size: 2rem;
+    color: #333;
+    background-color: #ffeb3b;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+    margin: 20px auto;
+}

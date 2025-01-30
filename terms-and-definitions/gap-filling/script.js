@@ -1,13 +1,12 @@
-const restartBtn = document.getElementById("restart-btn")
-const input1 = document.getElementById('input1');
-const input2 = document.getElementById('input2');
+const restartBtn = document.getElementById("restart-btn");
 const gameBoard = document.getElementById("game-container");
-var fileDropdown = document.getElementById("file-dropdown");
-
+const fileDropdown = document.getElementById("file-dropdown");
+const timerDisplay = document.getElementById("timer");
+const resultElement = document.getElementById("result");
 let gameData = [];
 
-document.getElementById('checkAnswers').addEventListener('click', function () {
-    const inputs = document.querySelectorAll('input'); // Seleciona todos os inputs no jogo
+document.getElementById("checkAnswers").addEventListener("click", () => {
+    const inputs = document.querySelectorAll("input"); // Seleciona todos os inputs no jogo
     let correctCount = 0;
 
     // Iterar pelos inputs e verificar se as respostas estão corretas
@@ -20,33 +19,17 @@ document.getElementById('checkAnswers').addEventListener('click', function () {
             : gameData[index].definition.toLowerCase();
 
         // Comparar a resposta do usuário com a resposta correta
-        if (userAnswer === correctAnswer) {
-            input.style.borderColor = "green"; // Sinalizar resposta correta
-            correctCount++;
-        } else {
-            input.style.borderColor = "red"; // Sinalizar resposta incorreta
-        }
+        input.style.borderColor = userAnswer === correctAnswer ? "green" : "red";
+        if (userAnswer === correctAnswer) correctCount++;
     });
 
     // Exibir o resultado
-    const resultElement = document.getElementById('result');
-    if (correctCount === inputs.length) {
-        resultElement.textContent = "Parabéns! Todas as respostas estão corretas.";
-        resultElement.style.color = "green";
-    } else {
-        resultElement.textContent = `Você acertou ${correctCount} de ${inputs.length} respostas.`;
-        resultElement.style.color = "red";
-    }
+    resultElement.textContent = correctCount === inputs.length 
+        ? "Parabéns! Todas as respostas estão corretas."
+        : `Você acertou ${correctCount} de ${inputs.length} respostas.`;
+    resultElement.style.color = correctCount === inputs.length ? "green" : "red";
 });
 
-
-function restartGame() {
-    input1.value = "";
-    input2.value = "";
-    console.log("1")
-}
-
-restartBtn.addEventListener("click", restartGame);
 
 // Função para embaralhar os dados
 function shuffleData(data) {
@@ -54,44 +37,27 @@ function shuffleData(data) {
 }
 
 function createGameBoard() {
-    gameBoard.innerHTML = ''; // Limpar tabuleiro anterior
-    const gaps = [];
+    gameBoard.innerHTML = ""; // Limpar tabuleiro anterior
 
     // Criar cards de termos e definições
     gameData.forEach((item, index) => {
-        // gap de Termo
-        const gapTerm = createGap(item, "term", index);
-        // gap de Definição
-        const gapDefinition = createGap(item, "definition", index);
-
-        gaps.push(gapTerm);
-        gaps.push(gapDefinition);
-
         const div = document.createElement("div");
-        div.appendChild(gapTerm);
-        div.appendChild(gapDefinition);
-
+        div.appendChild(createGap(item, "term", index));
+        div.appendChild(createGap(item, "definition", index));
         gameBoard.appendChild(div);
-
-
-
+        // Temporizador
+        resetTimer();
+        startTimer(timerDisplay);
     });
-
-    // Embaralhar os gaps e adicioná-los ao tabuleiro
-    // gaps.forEach(gap => gameBoard.appendChild(gap));
 }
 
 // Função para criar um gap
 function createGap(item, type, index) {
     const gap = type === "term" ? document.createElement("span") : document.createElement("input");
     gap.classList.add("gap");
-    gap.classList.add("input1")
     gap.dataset.index = index;
     gap.dataset.type = type;
-    gap.dataset.term = item.term;
-    gap.dataset.definition = item.definition;
     gap.textContent = type === "term" ? item.term : "";
-    // gap.addEventListener("click", onCardClick);
     return gap;
 }
 
@@ -114,23 +80,13 @@ function loadGameData(fileName) {
         .then(response => response.json())
         .then(data => {
             gameData = createUniquePairs(data);
-            // totalMatches = gameData.length;
-            // matchedCards = 0;
-            // errors = 0;
-            // gameStarted = false;
-            // timeElapsed = 0;
-            // timerDisplay.textContent = `00:00`;
-            // feedbackDisplay.textContent = '';
             createGameBoard();
         });
 }
 
 // Evento para carregar o arquivo selecionado
 fileDropdown.addEventListener("change", () => {
-    if (fileDropdown.value) {
-        loadGameData(fileDropdown.value);
-    }
+    if (fileDropdown.value) loadGameData(fileDropdown.value);
 });
 
 loadFileList(fileDropdown);
-
